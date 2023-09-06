@@ -4,12 +4,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
+
 
 const Connection = () => {
     
-    const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@taskmanaagement.wying2q.mongodb.net/?retryWrites=true&w=majority` ;
+    const URL = process.env.DB_URL ;
 
     mongoose.set('strictQuery', false);
     
